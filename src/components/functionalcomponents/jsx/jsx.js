@@ -23,7 +23,7 @@ return(
   
 export default Tabdata;
 
-  
+// another way of creating table cart 
 // const Product = () => {
 //     const Productinfo = [
 //             {
