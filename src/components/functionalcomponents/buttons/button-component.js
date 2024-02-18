@@ -1,7 +1,9 @@
-function ButtonComponent(){
+
+
+function ButtonComponent({title,bgColor,width}){
     return(
 
-        <button> SUBMIT</button>
+        <button style={{width:width,backgroundColor:bgColor}}> {title}</button>
     )
 
     
