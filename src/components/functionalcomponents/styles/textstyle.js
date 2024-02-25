@@ -12,15 +12,15 @@
 
 
 // inline object styling
-// const Styletext=()=>{
-//   const  objstyle= {color:"red", backgroundColor:"blue"}
-//         return(
-//             <div> 
-//                 <h3 style={objstyle}>HELLO</h3>
-//             </div>
-//         )
-//     }
-//     export default Styletext
+const Styletext=()=>{
+  const  objstyle= {color:"red", backgroundColor:"blue"}
+        return(
+            <div> 
+                <h3 style={objstyle}>HELLO</h3>
+            </div>
+        )
+    }
+    export default Styletext
 
 
 
