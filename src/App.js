@@ -10,11 +10,11 @@
 // import AnimatedToast from "./components/functionalcomponents/toasts/toast";
 
 
-import FilteredStudents from "./class-components/filterstudents/studentdesignation";
-
+// import FilteredStudents from "./class-components/filterstudents/studentdesignation";
 // import Products from "./class-components/products/products";
 
-// import ProductList from "./class-components/products/productscount";
+// import Products from "./class-components/products/products";
+ import ProductList from "./class-components/products/productscount";
 
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
  {/* <ImageComponent name="SHREYA...!"/> */}
   {/* <YoutubeButton/> */}
   {/* <Products/> */}
-  <FilteredStudents/>
+  {/* <FilteredStudents/> */}
 
-  {/* <ProductList/> */}
+  <ProductList/>
     </div>
   );
 }
