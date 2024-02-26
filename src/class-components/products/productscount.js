@@ -96,6 +96,17 @@ class ProductList extends Component{
         data:result
        })
       }
+
+      deleteProduct = (data) => {
+    // Use filter to create a new array with all items except the one to be deleted
+    let updatedData = this.state.data.filter((eachObj) => eachObj.id !== data.id);
+
+    // Update the state with the new array
+    this.setState({
+        data: updatedData
+    });
+}
+
     render(){
         return(
 
@@ -104,7 +115,7 @@ class ProductList extends Component{
           { this.state.data.map((eachobj)=>{
             return(
                 <div key={eachobj.id}>
-                <ProductListing  datas={eachobj} communication={this.childToParent} increment={this.increment} decrement={this.decrement}  reset={this.reset} Total={this.Total}/>
+                <ProductListing  datas={eachobj} communication={this.childToParent} increment={this.increment} decrement={this.decrement}  reset={this.reset} Total={this.Total} Delete={this.deleteProduct}/>
                 </div>
             )
 
@@ -129,6 +140,7 @@ class ProductListing extends Component{
                 <button onClick={()=>this.props.decrement(this.props.datas)}> - </button>
                 <button onClick={()=>this.props.reset(this.props.datas)}>Reset</button>
                 <button onClick={()=>this.props.Total(this.props.datas)}>Total</button>
+                <button onClick={() => this.props.deleteProduct(this.props.datas)}>Delete</button>
             </div>
         )
     }
