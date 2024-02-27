@@ -8,9 +8,10 @@
 // import Carousels from "./components/functionalcomponents/caurosel/caurosel";
 // import ModalExample from "./components/functionalcomponents/modals/modals";
 // import AnimatedToast from "./components/functionalcomponents/toasts/toast";
-
-
-// import FilteredStudents from "./class-components/filterstudents/studentdesignation";
+//  import ImageCarouselIncrement from "./class-components/products/imagecarousel";
+//  import Table from "./components/functionalcomponents/jsx/jsxtable";
+// import Spinner from "./components/functionalcomponents/spinners/spinner";
+//  import FilteredStudents from "./class-components/filterstudents/studentdesignation";
 // import Products from "./class-components/products/products";
 
 // import Products from "./class-components/products/products";
@@ -21,14 +22,17 @@ function App() {
   return (
     
     <div>
+      {/* <Table/> */}
 
+{/* <Spinner/> */}
   {/* <Drop/> */}
  {/* <ImageComponent name="SHREYA...!"/> */}
   {/* <YoutubeButton/> */}
   {/* <Products/> */}
   {/* <FilteredStudents/> */}
-
+   {/* <ImageCarouselIncrement/>  */}
   <ProductList/>
+ 
     </div>
   );
 }

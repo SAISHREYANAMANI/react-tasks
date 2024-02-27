@@ -13,7 +13,7 @@ function Table(){
             <th>rate</th>
             <th>count</th>
           </tr>
-            <Tabdata/>
+            {/* <Tabdata/> */}
         </table>
     )
 }

@@ -1,5 +1,8 @@
 import {Component} from "react"
 import data from "../../components/functionalcomponents/jsx/apidata"
+import Table from "../../components/functionalcomponents/jsx/jsxtable"
+
+
 class ProductList extends Component{
     constructor(){
         super()
@@ -87,7 +90,10 @@ class ProductList extends Component{
             return(
                 <div key={eachobj.id}>
                 <ProductListing  datas={eachobj} communication={this.childToParent} increment={this.increment} decrement={this.decrement}  reset={this.reset} Total={this.Total} Delete={this.deleteProduct}/>
+
                 </div>
+            
+
             )
 
           })}
@@ -102,14 +108,41 @@ class ProductListing extends Component{
     render(){
         return(
             <div>
+              
+                
+               <Table/>
+               
+               <tbody>
+              {data.map((eachitem)=>{
+             const{id,title,price,description,category,image,rating:{rate,count}} = eachitem;
+              return(
+           
+              <tr>
+                <td> <h4>{id}</h4></td>
+                <td> <img src={image} width={150} height={150} alt=""/></td>
+                <td> <h4>{title}</h4> </td>
+                <td> <h4>{price}</h4> </td>
+                <td> <h4>{count}</h4> </td>
+                <td>
+                    <h3>  {this.props.datas.price*this.props.datas.rating.count}</h3></td>
+                <td> <h4><button onClick={()=>this.props.increment(this.props.datas)}>+</button></h4> </td>
+                <td> <h4> <button onClick={()=>this.props.decrement(this.props.datas)}>-</button></h4> </td>
+                <td> <h4><button onClick={()=>this.props.reset(this.props.datas)}>Reset</button></h4></td>
+                <td><button onClick={() => this.props.Delete(this.props.datas)}>Delete</button> </td>
+            </tr>
+        )
+    })}
+</tbody>
+                   
                 <h3>{this.props.datas.title}</h3>
                 <h3>PRICE--{this.props.datas.price}</h3>
                 <h3>COUNT--{this.props.datas.rating.count}</h3>
                 <h3>TOTAL--{this.props.datas.price*this.props.datas.rating.count}</h3>
                 <button onClick={()=>this.props.increment(this.props.datas)}>+</button>
-                <button onClick={()=>this.props.decrement(this.props.datas)}> - </button>
+                <button onClick={()=>this.props.decrement(this.props.datas)}>-</button>
                 <button onClick={()=>this.props.reset(this.props.datas)}>Reset</button>
                 <button onClick={() => this.props.Delete(this.props.datas)}>Delete</button>
+               
             </div>
         )
     }

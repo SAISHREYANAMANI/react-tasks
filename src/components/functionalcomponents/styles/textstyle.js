@@ -12,32 +12,32 @@
 
 
 // inline object styling
-const Styletext=()=>{
-  const  objstyle= {color:"red", backgroundColor:"blue"}
-        return(
-            <div> 
-                <h3 style={objstyle}>HELLO</h3>
-            </div>
-        )
-    }
-    export default Styletext
+// const Styletext=()=>{
+//   const  objstyle= {color:"red", backgroundColor:"blue"}
+//         return(
+//             <div> 
+//                 <h3 style={objstyle}>HELLO</h3>
+//             </div>
+//         )
+//     }
+//     export default Styletext
 
 
 
 
 // external styling
-// import "./textstyle.css"
-// // or we can import directly app.css file by adding stylings there
-//     const Styletext=()=>{
-//         const  objstyle= {color:"red", backgroundColor:"blue"}
-//               return(
-//                   <div> 
-//                       <h3 style={objstyle}>HELLO</h3>
-//                       <h4 className="text">AM SHREYA</h4>
-//                   </div>
-//               )
-//           }
-//           export default Styletext
+import "./textstyle.css"
+// or we can import directly app.css file by adding stylings there
+    const Styletext=()=>{
+        const  objstyle= {color:"red", backgroundColor:"blue"}
+              return(
+                  <div> 
+                      <h3 style={objstyle}>HELLO</h3>
+                      <h4 className="text">AM SHREYA</h4>
+                  </div>
+              )
+          }
+          export default Styletext
 
 
 // external module styling

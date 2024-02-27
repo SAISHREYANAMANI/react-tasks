@@ -148,4 +148,3 @@ class FilteredStudents extends Component {
 }
 
 export default FilteredStudents;
-
