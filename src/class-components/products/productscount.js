@@ -34,18 +34,6 @@ class ProductList extends Component{
       console.log(result,"result logged")
         this.setState({data:result})
 
-    // let result2=this.state.data.map(element=>{
-    //     if(element.id===datas.id){
-    //         return{...this.state.data,price:element.price*element.rating.count}
-    //     }
-    //     else{
-    //         return element
-    //     }
-    // })
-    //   this.setState({
-    //     data:result2
-    //   })
-
       }
       decrement=(datas)=>{
         console.log(datas,this.state.data)
@@ -67,7 +55,7 @@ class ProductList extends Component{
         let res=this.state.data.map((eachobj)=>{
             if(eachobj.id===datas.id){
                 let newObj={...eachobj,rating:{
-                    ...eachobj.rating,count:0
+                    ...eachobj.rating,count:1
                 }}
                 return newObj
 
@@ -78,23 +66,6 @@ class ProductList extends Component{
 
         })
        this.setState({data:res})
-      }
-      Total=(datas)=>{
-       let result=this.state.data.map((eachobj)=>{
-        if(eachobj.id===datas.id){
-            return{...eachobj,rating:{
-                ...eachobj.rating,price:eachobj.rating.count*eachobj.price
-            }}
-           console.log(result) 
-        }
-        else{
-            return eachobj
-        }
-       })
-       console.log(result,"total")
-       this.setState({
-        data:result
-       })
       }
 
       deleteProduct = (data) => {
@@ -134,13 +105,11 @@ class ProductListing extends Component{
                 <h3>{this.props.datas.title}</h3>
                 <h3>PRICE--{this.props.datas.price}</h3>
                 <h3>COUNT--{this.props.datas.rating.count}</h3>
-                <h3>TOTAL--{this.props.datas.price}</h3>
+                <h3>TOTAL--{this.props.datas.price*this.props.datas.rating.count}</h3>
                 <button onClick={()=>this.props.increment(this.props.datas)}>+</button>
-                  {/* <h4>{this.props.datas.rating.count}</h4> */}
                 <button onClick={()=>this.props.decrement(this.props.datas)}> - </button>
                 <button onClick={()=>this.props.reset(this.props.datas)}>Reset</button>
-                <button onClick={()=>this.props.Total(this.props.datas)}>Total</button>
-                <button onClick={() => this.props.deleteProduct(this.props.datas)}>Delete</button>
+                <button onClick={() => this.props.Delete(this.props.datas)}>Delete</button>
             </div>
         )
     }
