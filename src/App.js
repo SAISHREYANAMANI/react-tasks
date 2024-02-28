@@ -15,7 +15,8 @@
 // import Products from "./class-components/products/products";
 
 // import Products from "./class-components/products/products";
- import ProductList from "./class-components/products/productscount";
+  import ProductList from "./class-components/products/productscount";
+// import ProductsApi from "./components/functionalcomponents/axios/products";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
   {/* <FilteredStudents/> */}
    {/* <ImageCarouselIncrement/>  */}
   <ProductList/>
+  {/* <ProductsApi/> */}
  
     </div>
   );
