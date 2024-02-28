@@ -15,7 +15,8 @@
 // import Products from "./class-components/products/products";
 
 // import DomManipulation from "./class-components/lifeCycle/mounting/dom";
-import UpdatingPhase from "./class-components/lifeCycle/updating/stateUpdation";
+import Unmounting from "./class-components/lifeCycle/unmounting/unmounting";
+// import UpdatingPhase from "./class-components/lifeCycle/updating/stateUpdation";
 // import Mounting from "./class-components/lifeCycle/mounting/mountingPhase";
 
 // import Products from "./class-components/products/products";
@@ -40,7 +41,8 @@ function App() {
   {/* <ProductsApi/> */}
   {/* <Mounting/> */}
  {/* <DomManipulation favColor={"blue"}/> */}
- <UpdatingPhase/>
+ {/* <UpdatingPhase/> */}
+ <Unmounting/>
     </div>
   );
 }

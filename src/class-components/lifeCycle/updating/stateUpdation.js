@@ -18,11 +18,16 @@ class UpdatingPhase extends Component{
    }
     shouldComponentUpdate(){
         console.log("should component update")
-        return false
+        return true
     }
     static getDerivedStateFromProps(props, state){
         console.log("getDerivedStateFromProps")
     }
+    getSnapshotBeforeUpdate(prevprops,prevState){
+        console.log( prevState,"previous state")
+
+    }
+
 
 render(){
    
@@ -31,9 +36,9 @@ console.log("render")
     return(
         <>
         <h2>hello</h2>
-        <button onClick={this.increment}>increment</button>
+        <button onClick={this.increment}>increment  {this.state.count}</button>
         
-        {this.state.count}
+       
         
         </>
     )
