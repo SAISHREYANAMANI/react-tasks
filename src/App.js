@@ -14,7 +14,9 @@
 //  import FilteredStudents from "./class-components/filterstudents/studentdesignation";
 // import Products from "./class-components/products/products";
 
-import Mounting from "./class-components/lifeCycle/mounting/mountingPhase";
+// import DomManipulation from "./class-components/lifeCycle/mounting/dom";
+import UpdatingPhase from "./class-components/lifeCycle/updating/stateUpdation";
+// import Mounting from "./class-components/lifeCycle/mounting/mountingPhase";
 
 // import Products from "./class-components/products/products";
   // import ProductList from "./class-components/products/productscount";
@@ -36,8 +38,9 @@ function App() {
    {/* <ImageCarouselIncrement/>  */}
   {/* <ProductList/> */}
   {/* <ProductsApi/> */}
-  <Mounting/>
- 
+  {/* <Mounting/> */}
+ {/* <DomManipulation favColor={"blue"}/> */}
+ <UpdatingPhase/>
     </div>
   );
 }

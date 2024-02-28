@@ -9,7 +9,6 @@ constructor(){
    }
 }
 
-
 render(){ 
     return(
         <h2>Circle</h2>
