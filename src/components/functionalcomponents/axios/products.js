@@ -4,9 +4,9 @@ import axios from "axios"
 const ProductsApi=()=>{
     const fetchData= async ()=>{
         // hit the server using axios
-//       axios.get("https://fakestoreapi.com/products")
-//       .then(response=> console.log(response))
-//       .catch(err=>console.log(err))
+      // axios.get("https://fakestoreapi.com/products")
+      // .then(response=> console.log(response))
+      // .catch(err=>console.log(err))
 
 
 // hitting using async await in axios
