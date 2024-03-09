@@ -1,0 +1,39 @@
+
+.divstyle{
+    background-image:url("https://cdn.pixabay.com/photo/2016/12/31/16/14/frozen-bubble-1943224_1280.jpg") ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color:whitesmoke;
+    width: 50%;
+    height: 100%;
+    margin: 25px auto;
+    /* outline: solid 1px black; */
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+ }
+.form-control{
+    
+    width:100% !important;
+    background-color: transparent !important;
+    border:1px solid white !important;
+    -webkit-text-fill-color: white !important;
+    font-family: cursive;
+
+}
+.form-label{
+    font-family: cursive;
+}
+.btn{
+    margin-left: 100px;
+    margin-top:5px;
+    background-color: rgb(10, 56, 108) !important;
+    padding:10px;
+    color:white !important;
+    border-style:"none"
+}
+.Linkstyle{
+    text-decoration: none;
+    color:white
+
+}
