@@ -1,9 +1,10 @@
-import HomeScreen from "./Home"
+import Header from "../components/functionalcomponents/navbars/Navigation"
+
 
 const ProfileScreen=()=>{
     return(
 <>
-<HomeScreen/>
+<Header/>
 <h2>Profile screen</h2>
 </>
     )

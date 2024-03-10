@@ -1,10 +1,14 @@
-import HomeScreen from "./Home"
+import { useContext } from "react"
+import { UserDetail } from "../Navigations/navigation"
+import Header from "../components/functionalcomponents/navbars/Navigation"
 
 const SettingScreen=()=>{
+  const userInfo=  useContext(UserDetail)
     return(
 <>
-<HomeScreen/>
+<Header/>
 <h2>Setting screen</h2>
+<h3>{userInfo.username}</h3>
 </>
     )
 }
