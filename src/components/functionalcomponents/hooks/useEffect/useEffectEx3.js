@@ -1,46 +1,28 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
-import Spinner from "../../spinner/spinner"
 
 
 
 
 
-
-const UseEffectEx3=()=>{
+const UseEffect4Example =()=>{
     const[count,setCount]=useState(0)
 
-    const [data,setData]=useState([])
+    useEffect(()=>{
+        domManipulation()
+        console.log("useEffect")
+    },[count])
 
-    useEffect(() => {
-     
-         fetchData()
- 
-      },[]);
-
-    const fetchData = async ()=>{
-
-
-    const result =await axios.get("https://dummyjson.com/products")
-      setData(result.data.products)
-
+    const domManipulation =()=>{
+        document.title=`Current count ${count}`
     }
-
 
     return(
         <>
-        <h1>UseEffect</h1>
-        <h4>{count}</h4>
-        <button  onClick={()=>setCount(count+1)} >Count change</button>
-        {
-            data.length>0
-            ?
-            data.map(item=><h4>{item.title}</h4>)
-            :
-            <Spinner/>
-        }
+        <h2>use effect</h2>
+        <h3>Current count {count}</h3>
+        <button onClick={()=>setCount(count+1)} >Increment</button>
         </>
     )
 }
-export default UseEffectEx3
 
+export default UseEffect4Example

@@ -1,28 +1,24 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
+const UseEffect5 =()=>{
+     useEffect(()=>{
+      window.addEventListener("mousemove",callbackFunction)
 
+     },[])
 
-
-
-const UseEffect4Example =()=>{
-    const[count,setCount]=useState(0)
-
-    useEffect(()=>{
-        domManipulation()
-        console.log("useEffect")
-    },[count])
-
-    const domManipulation =()=>{
-        document.title=`Current count ${count}`
-    }
+     const callbackFunction=(event)=>{
+        console.log(event.clientX)
+        console.log(event.clientY)
+     }
 
     return(
         <>
-        <h2>use effect</h2>
-        <h3>Current count {count}</h3>
-        <button onClick={()=>setCount(count+1)} >Increment</button>
+        <h2>hello</h2>
+        
+        
         </>
     )
 }
 
-export default UseEffect4Example
+export default UseEffect5
+

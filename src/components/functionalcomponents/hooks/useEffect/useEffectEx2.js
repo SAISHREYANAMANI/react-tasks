@@ -1,44 +1,46 @@
+import axios from "axios"
 import { useEffect, useState } from "react"
+import Spinner from "../../spinner/spinner"
 
 
 
-const UseEffectExample=()=>{
-    const[counter,setCounter]=useState(0)
-    const[counter1,setCounter1]=useState(10)
 
-    useEffect(()=>{
-        console.log("useEffect")
-    },[counter,counter1])
 
-    const handleIncrement =()=>{
-        setCounter(counter+1)
+
+const UseEffectEx3=()=>{
+    const[count,setCount]=useState(0)
+
+    const [data,setData]=useState([])
+
+    useEffect(() => {
+     
+         fetchData()
+ 
+      },[]);
+
+    const fetchData = async ()=>{
+
+
+    const result =await axios.get("https://dummyjson.com/products")
+      setData(result.data.products)
+
     }
-    const handleIncrement2 =()=>{
-        setCounter1(counter1+1)
-    }
+
 
     return(
-        <>     
-        <h1>Counter {counter}</h1>
-        <button onClick={handleIncrement} >Increment</button>
-
-
-        <h1>Counter  {counter1}</h1>
-    
-        <button onClick={handleIncrement2} >Increment counter 2</button>
+        <>
+        <h1>UseEffect</h1>
+        <h4>{count}</h4>
+        <button  onClick={()=>setCount(count+1)} >Count change</button>
+        {
+            data.length>0
+            ?
+            data.map(item=><h4>{item.title}</h4>)
+            :
+            <Spinner/>
+        }
         </>
     )
 }
-export default UseEffectExample
+export default UseEffectEx3
 
-
-// depndency array :
-// based on the depencey array , useEffect will go for different life cyles 
-
-// 1. remove the array ---> useEffect re-renders for every state or prop changes 
-
-
-// 2. empty array --> useEffect will act like a component did mount 
-// 3. array with state or prop values --> useEffect will act like a component did update 
-// 4. if callback returns the function we can prevent memory leaks ----> useEffect will act like a component 
-// willUnmount 
