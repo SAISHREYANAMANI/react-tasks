@@ -1,19 +1,32 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const UseEffect5 =()=>{
+
+    const[x,setX]=useState(null)
+    const[y,setY]=useState(null)
      useEffect(()=>{
       window.addEventListener("mousemove",callbackFunction)
+
+      return()=>{
+         window.removeEventListener("mousemove",callbackFunction)
+      }
 
      },[])
 
      const callbackFunction=(event)=>{
+       
+        setX(event.clientX)
+        setY(event.clientY)
         console.log(event.clientX)
         console.log(event.clientY)
+       
      }
 
     return(
         <>
         <h2>hello</h2>
+        <h3>X position {x}</h3>
+        <h3>Y position {y}</h3>
         
         
         </>
@@ -21,10 +34,3 @@ const UseEffect5 =()=>{
 }
 
 export default UseEffect5
-
-
-// Tasks :
-
-// 1. Repeat the class
-// 2. based on the count value , show th corresponding product in the ui 
-// 3. prepare the react topics till now 
