@@ -11,8 +11,7 @@ const UseEffectEx2=()=>{
     const result =await axios.get("https://dummyjson.com/products/1")
       setData(result.data.products)
 
-    }
-    
+    } 
     return(
         <>
         <h1>UseEffect</h1>

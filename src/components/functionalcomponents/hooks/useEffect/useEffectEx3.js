@@ -1,9 +1,4 @@
 import { useEffect, useState } from "react"
-
-
-
-
-
 const UseEffect3Example =()=>{
     const[count,setCount]=useState(0)
 
@@ -15,7 +10,6 @@ const UseEffect3Example =()=>{
     const domManipulation =()=>{
         document.title=`Current count ${count}`
     }
-
     return(
         <>
         <h2>use effect</h2>
@@ -24,5 +18,4 @@ const UseEffect3Example =()=>{
         </>
     )
 }
-
 export default UseEffect3Example

@@ -16,7 +16,7 @@ const UseEffectTask = () => {
     try {
       const result = await axios.get(`https://dummyjson.com/products/${count}`);
       console.log("Fetched data:", result.data);
-      setData(result.data); // Corrected line
+      setData(result.data); 
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -30,7 +30,6 @@ const UseEffectTask = () => {
       ) : (
         
         <div className="d-flex justify-content-center align-items-center vh-100">
-          {/* <button onClick={() => setCount(count + 1)} style={{backgroundColor:"blue",padding:"5px", borderRadius:"12px 16px", color: "white", marginTop:"50px", marginLeft:"150px"}}> See more Products</button> */}
           <Card  style={{ border: "2px solid dark",width: '18rem', margin:"mx-auto", backgroundColor:"primary"}}>
           <Card.Img variant="top" src={data.images[0]} />
           <Card.Body>
@@ -48,7 +47,6 @@ const UseEffectTask = () => {
           </ListGroup>
           <Card.Body>
             <Card.Link href={data.thumbnail}>Product Link</Card.Link>
-            {/* <Card.Link href="#">Another Link</Card.Link> */}
           </Card.Body>
         </Card>
       </div>
