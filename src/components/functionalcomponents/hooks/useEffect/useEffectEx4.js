@@ -23,8 +23,3 @@ const UseEffect5 =()=>{
 export default UseEffect5
 
 
-// Tasks :
-
-// 1. Repeat the class
-// 2. based on the count value , show th corresponding product in the ui 
-// 3. prepare the react topics till now 
