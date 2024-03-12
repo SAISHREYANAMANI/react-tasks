@@ -1,8 +1,6 @@
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./formstyles.css"
-import { Link } from "react-router-dom"
-import axios, { Axios } from "axios"
 const Registration=()=>{
    const[username,setusername]=useState("")
     const [userMail,setuserMail]=useState("")
@@ -17,152 +15,87 @@ const Registration=()=>{
 const usernameHandler=(event)=>{
   let usernameInput=event.target.value
   setusername(usernameInput)
-  // if(usernameInput.length>5){
-  //   // alert("please enter less than 5 characters")
-  //   showError()
-  //  }
-  //  else{
-  //   setUsernameError(null)
-  //  }
+  if(usernameInput.length>5){
+    // alert("please enter less than 5 characters")
+    showError()
+   }
+   else{
+    setUsernameError(null)
+   }
 }
-// const  showError=()=>{
-//   setUsernameError("username must be less than 5 charcters")
-//  }
+const  showError=()=>{
+  setUsernameError("username must be less than 5 charcters")
+ }
 
     const userMailHandler=(event)=>{
         // console.log(event.target.value)
         let userMailInput=event.target.value
        setuserMail(userMailInput)
-      //  if(userMailInput.match(/^\S+@\S+\.\S+\S+\S+\S$/)){
-      //   // alert("please enter less than 5 characters")
-      //   showMailError()
-      //  }
-      //  else{
-      //   setUserMailError(null)
-      //  }
+       if(userMailInput.match(/^\S+@\S+\.\S+\S+\S+\S$/)){
+        // alert("please enter less than 5 characters")
+        showMailError()
+       }
+       else{
+        setUserMailError(null)
+       }
 
     }
-  //  const  showMailError=()=>{
-  //   setUserMailError("email must contain @.com")
-  //  }
+   const  showMailError=()=>{
+    setUserMailError("email must contain @.com")
+   }
 
    const passwordHandler=(event)=>{
     let passwordInput=event.target.value
     setpassword(passwordInput)
-    // if(isNaN(passwordInput)){
-    //   showpasswordError()
-    // }
-    // else{
-    //   setpasswordError(null)
-    // }
+    if(isNaN(passwordInput)){
+      showpasswordError()
+    }
+    else{
+      setpasswordError(null)
+    }
 
    }
-  //  const showpasswordError=()=>{
-  //   setpasswordError("password must be numbers")
-  //  }
+   const showpasswordError=()=>{
+    setpasswordError("password must be numbers")
+   }
 
    const passwordHandler1=(event)=>{
     let passwordInput1=event.target.value
     setpassword1(passwordInput1)
-    // if(passwordInput1!== password){
-    //   showpasswordError1()
-    // }
-    // else{
-    //   setpasswordError1(null)
-    // }
+    if(passwordInput1!== password){
+      showpasswordError1()
+    }
+    else{
+      setpasswordError1(null)
+    }
 
    }
-  //  const showpasswordError1=()=>{
-  //   setpasswordError1("password must match the previous")
-  //  }
+   const showpasswordError1=()=>{
+    setpasswordError1("password must match the previous")
+   }
 
    const phoneNumberHandler=(event)=>{
     let phoneNumberInput=event.target.value
     setphoneNumber(phoneNumberInput)
     // const phoneRegex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
     const phoneregx = /^[6-9]\d{9}$/ ;
-  // if(!phoneregx.test(phoneNumberInput)){
-  //       showphoneNumberError();
-  //     } else {
-  //       setphoneNumberError(null);
-  //     }
+  if(!phoneregx.test(phoneNumberInput)){
+        showphoneNumberError();
+      } else {
+        setphoneNumberError(null);
+      }
 
    }
-  //  const showphoneNumberError=()=>{
-  //   setphoneNumberError("phone number must contain only 10 digits")
-  //  }
-
-  const handleSubmit = (event) => {
-    console.log(username,password)
-  event.preventDefault();
-
-  postData(
-    {
-      username:username,
-      password:password
-    }
-  )
-  
-  // Create an object with the form data
-  // const formData = {
-  //   username,
-  //   userMail,
-  //   password,
-  //   password1,
-  //   phonenumber,
-  // };
-
-  // // Convert the object to a JSON string
-  // const formDataJSON = JSON.stringify(formData);
-
-  // // Store the JSON string in local storage
-  // localStorage.setItem("formData", formDataJSON);
-
-  // // Clear the form fields
-  // setusername("");
-  // setuserMail("");
-  // setpassword("");
-  // setpassword1("");
-  // setphoneNumber("");
-
-  // // Redirect or perform any other actions as needed
-  // // For now, let's just log a message
-  // console.log("Form data stored in local storage:", formData);
-};
-
-
-//  useEffect((data)=>{
-//         axios.post("https://dummyjson.com/auth/login")
-//         .then(response=>{
-         
-//             if(response.status===200){
-//                 setData(response.data)
-//             }
-//         })
-//         .catch(err=>console.log(err))
-//     },[])
-
-
-const postData=(data)=>{
-  fetch('https://dummyjson.com/auth/login', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    
-    username: username,
-    password: password
-  })
-})
-.then(res => res.json())
-.then(res=>console.log(res));
-}
-
+   const showphoneNumberError=()=>{
+    setphoneNumberError("phone number must contain only 10 digits")
+   }
+ 
 
 
     return(
         <>
         <div className="divstyle">
-      <form onSubmit={handleSubmit}>
+      <form action="/action_page.php">
       <h2 style={{fontFamily:"cursive"}}> REGISTRATION FORM</h2>
      <div className="mb-3 mt-3">
     <label htmlFor="username" className="form-label">
@@ -171,7 +104,7 @@ const postData=(data)=>{
     <input
       type="text"
       className="form-control"
-      id="name"
+      id="email"
       placeholder="Enter name"
       name="username"
        value={username}
@@ -193,7 +126,6 @@ const postData=(data)=>{
       id="email"
       placeholder="Enter email"
       name="email"
-    
        value={userMail}
        onChange={userMailHandler}
        style={{border:userMailError?"2px solid red":"0"}}
@@ -213,7 +145,6 @@ const postData=(data)=>{
       id="pwd"
       placeholder="Enter password"
       name="pswd"
-   
     value={password}
      onChange={passwordHandler}
      style={{border:passwordError?"2px solid red":"0"}}
@@ -221,20 +152,18 @@ const postData=(data)=>{
      {
        passwordError?<span style={{color:"red"}}>{passwordError}</span>:null
     }
-     
   </div>
 
   <div className="mb-3">
-    <label htmlFor="pswd1" className="form-label">
+    <label htmlFor="pwd" className="form-label">
       Confirm Password:
     </label>
     <input
       type="password"
       className="form-control"
-      id="pwd1"
+      id="pwd"
       placeholder="Enter password"
-      name="pswd1"
-    
+      name="pswd"
     value={password1}
      onChange={passwordHandler1}
      style={{border:passwordError1?"2px solid red":"0"}}
@@ -297,22 +226,13 @@ const postData=(data)=>{
   </select>
 </div>
   
-<button type="submit" className="btn btn-primary">
-{/* <Link className="Linkstyle" to={"/Login"}> */}
-  Submit
-  {/* </Link>  */}
-</button>
-
-
-  {/* <button className="btn btn-primary">
-  <Link className="Linkstyle" to={"/Login"}>
-   Login
-  </Link>
-  </button> */}
+  <button type="submit" className="btn btn-primary">
+    Submit
+  </button>
 </form>
 </div>
 
-</>
+        </>
     )
 }
 export default Registration

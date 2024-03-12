@@ -8,6 +8,7 @@ import { createContext } from "react"
 export const UserDetail=createContext()
 const Navigation=()=>{
 const[username,setUserName]=useState("shreya")
+const[login,setLogin]=useState(false)
  const changeName=()=>{
     setUserName("SAI SHREYA")
  }
@@ -19,7 +20,7 @@ const[username,setUserName]=useState("shreya")
         }}>
         
    {
-    true?
+    login?
     <PostRoutes/>
     :
     <PreRoutes/>
