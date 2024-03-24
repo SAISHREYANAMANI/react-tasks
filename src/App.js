@@ -1,6 +1,7 @@
 import Controlled from "./components/functionalcomponents/forms/controlled";
 import Registration from "./components/functionalcomponents/forms/registrationform";
 import Uncontrolled from "./components/functionalcomponents/forms/uncontrolled";
+import Counter from "./components/functionalcomponents/hooks/ex";
 
 
 
@@ -12,8 +13,8 @@ function App() {
     <div>
  {/* <Uncontrolled/> */}
  {/* <Controlled/> */}
- <Registration/>
-
+ {/* <Registration/> */}
+<Counter/>
 
     </div>
   );
