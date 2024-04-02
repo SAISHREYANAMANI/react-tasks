@@ -5,7 +5,7 @@ import UseEffect4 from "./components/functionalcomponents/hooks/useEffect/useEff
 import UseEffectExample from "./components/functionalcomponents/hooks/useEffect/useEffectEx1";
 import UseEffectEx2 from "./components/functionalcomponents/hooks/useEffect/useEffectEx2";
 import UseEffect3Example from "./components/functionalcomponents/hooks/useEffect/useEffectEx3";
-import UseEffectTask from "./components/functionalcomponents/hooks/useEffect/useEffectTaks";
+import UseEffectTask from "./components/functionalcomponents/hooks/useEffect/useEffectTask";
 
 
 
