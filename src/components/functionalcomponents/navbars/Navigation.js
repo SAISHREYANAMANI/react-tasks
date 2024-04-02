@@ -8,7 +8,7 @@ const Header =()=>{
   <div className="container-fluid">
     <ul className="navbar-nav">
       <li className="nav-item" style={liStyle} >
-        <Link style={linkStyle} >Home </Link>
+        <Link style={linkStyle} to={"/"} >Home </Link>
       </li>
       <li className="nav-item">
       <Link style={linkStyle}  to={"/profile"} >Profile</Link>
